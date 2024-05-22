@@ -15,12 +15,18 @@
 
         <!-- Lista della "To-Do List"-->
         <ul>
-            <li v-for="todo in todos" :key="todo.text" :class="{ done: todo.done }" @click="toggleDone(todo)">
-                {{ todo.text }}
+            
+            <li v-for="(todo, index) in todos" :key="index" :class="{ done: todo.done }">
+
+                <!-- Visualizzazione del testo del to-do -->
+                <span @click="toggleDone(todo)">{{ todo.text }}</span>
+
+                <!-- Croce -->
+                <button class="remove-button" @click="removeTodo(index)">x</button>
             </li>
         </ul>
     </div>
-
+    
     <!-- Js -->
     <script src="main.js"></script>
 </body>

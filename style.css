@@ -1,4 +1,13 @@
-/* Testo Barrato */
+/* Button X */
+.remove-button {
+    color: red;
+    border: none; 
+    background: none; 
+    cursor: pointer; 
+    font-size: 1.2em; 
+}
+
+/* Testo barrato per i to-do completati */
 .done {
     text-decoration: line-through;
 }
