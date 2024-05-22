@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue.js To-Do List</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="app">
+
+        <!-- Titolo -->
+        <h1>To-Do List</h1>
+
+        <!-- Lista della "To-Do List"-->
+        <ul>
+            <li v-for="todo in todos" :key="todo.text" :class="{ done: todo.done }" @click="toggleDone(todo)">
+                {{ todo.text }}
+            </li>
+        </ul>
+    </div>
+
+    <!-- Js -->
+    <script src="main.js"></script>
 </body>
 </html>
