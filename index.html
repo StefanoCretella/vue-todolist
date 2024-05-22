@@ -12,16 +12,21 @@
 
         <!-- Titolo -->
         <h1>To-Do List</h1>
+        
+        <!-- Input per aggiungere un nuovo to-do -->
+        <input type="text" v-model="newTodoText" placeholder="Aggiungi un nuovo to-do" @keyup.enter="addTodo">
 
-        <!-- Lista della "To-Do List"-->
+        <!-- Pulsante per aggiungere un nuovo to-do -->
+        <button @click="addTodo">Aggiungi</button>
+
+        <!-- Lista -->
         <ul>
-            
             <li v-for="(todo, index) in todos" :key="index" :class="{ done: todo.done }">
 
                 <!-- Visualizzazione del testo del to-do -->
                 <span @click="toggleDone(todo)">{{ todo.text }}</span>
 
-                <!-- Croce -->
+                <!-- Pulsante di rimozione del to-do -->
                 <button class="remove-button" @click="removeTodo(index)">x</button>
             </li>
         </ul>
